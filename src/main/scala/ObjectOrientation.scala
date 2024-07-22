@@ -13,5 +13,13 @@ object ObjectOrientation extends App {
   val anAnimal = new Animal
 
   // inheritance
+  class Dog(val name: String) extends Animal // constructor definition
+  val aDog = new Dog("Bobby")
+
+  // constructor arguments are NOT fields; need to put a val before constructor argument
+  aDog.name
+
+  val aDeclaredAnimal: Animal = new Dog("Hachi")
+  aDeclaredAnimal.eat() // the most derived method will be called at runtime
 
 }

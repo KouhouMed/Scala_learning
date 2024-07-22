@@ -22,4 +22,10 @@ object ObjectOrientation extends App {
   val aDeclaredAnimal: Animal = new Dog("Hachi")
   aDeclaredAnimal.eat() // the most derived method will be called at runtime
 
+  // abstract class
+  abstract class WalkingAnimal {
+    val hasLegs = true // by default public, can restrict by adding protected or private
+
+    def walk(): Unit
+  }
 }

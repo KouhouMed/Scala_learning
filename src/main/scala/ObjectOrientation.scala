@@ -69,49 +69,5 @@ object ObjectOrientation extends App {
     val dinosaur = new Carnivore_Anonymous_35728
    */
 
-  // singleton object
-  object MySingleton { // the only instance of the MySingleton type
-    val mySpecialValue = 53278
-
-    def mySpecialMethod(): Int = 5327
-
-    def apply(x: Int): Int = x + 1
-  }
-
-  MySingleton.mySpecialMethod()
-  MySingleton.apply(65)
-  MySingleton(65) // equivalent to MySingleton.apply(65)
-
-  object Animal { // companions - companion object
-    // companions can access each other's private fields/methods
-    // singleton Animal and instances of Animal are different things
-    val canLiveIndefinitely = false
-  }
-
-  val animalsCanLiveForever = Animal.canLiveIndefinitely // "static" fields/methods
-
-  /*
-   case classes = lightweight data structures with some boilerplate
-   - sensible equals and hash code
-   - serialization
-   - companion with apply
-   - pattern matching
-  */
-  case class Person(name: String, age: Int)
-
-  // may be constructed without new
-  val bob = Person("Bob", 54) // Person.apply("Bob", 54)
-
-  // exceptions
-  try {
-    // code that can throw
-    val x: String = null
-    x.length
-  } catch { // in Java: catch(Exception e) {...}
-    case e: Exception => "some faulty error message"
-  } finally {
-    // execute some code no matter what
-  }
-
 
 }

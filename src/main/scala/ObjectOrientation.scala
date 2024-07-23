@@ -69,5 +69,22 @@ object ObjectOrientation extends App {
     val dinosaur = new Carnivore_Anonymous_35728
    */
 
+  // singleton object
+  object MySingleton { // the only instance of the MySingleton type
+    val mySpecialValue = 53278
 
+    def mySpecialMethod(): Int = 5327
+
+    def apply(x: Int): Int = x + 1
+  }
+
+  MySingleton.mySpecialMethod()
+  MySingleton.apply(65)
+  MySingleton(65) // equivalent to MySingleton.apply(65)
+
+  object Animal { // companions - companion object
+    // companions can access each other's private fields/methods
+    // singleton Animal and instances of Animal are different things
+    val canLiveIndefinitely = false
+  }
 }

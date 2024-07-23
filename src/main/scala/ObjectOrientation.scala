@@ -101,4 +101,22 @@ object ObjectOrientation extends App {
 
   // may be constructed without new
   val bob = Person("Bob", 54) // Person.apply("Bob", 54)
+
+  // exceptions
+  try {
+    // code that can throw
+    val x: String = null
+    x.length
+  } catch { // in Java: catch(Exception e) {...}
+    case e: Exception => "some faulty error message"
+  } finally {
+    // execute some code no matter what
+  }
+
+  // generics
+  abstract class MyList[T] {
+    def head: T
+
+    def tail: MyList[T]
+  }
 }

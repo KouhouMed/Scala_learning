@@ -87,4 +87,18 @@ object ObjectOrientation extends App {
     // singleton Animal and instances of Animal are different things
     val canLiveIndefinitely = false
   }
+
+  val animalsCanLiveForever = Animal.canLiveIndefinitely // "static" fields/methods
+
+  /*
+   case classes = lightweight data structures with some boilerplate
+   - sensible equals and hash code
+   - serialization
+   - companion with apply
+   - pattern matching
+  */
+  case class Person(name: String, age: Int)
+
+  // may be constructed without new
+  val bob = Person("Bob", 54) // Person.apply("Bob", 54)
 }

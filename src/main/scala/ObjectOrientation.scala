@@ -119,4 +119,22 @@ object ObjectOrientation extends App {
 
     def tail: MyList[T]
   }
+
+  // using a generic with a concrete type
+  val aList: List[Int] = List(1, 2, 3) // List.apply(1,2,3)
+  val first = aList.head // int
+  val rest = aList.tail
+  val aStringList = List("hello", "Scala")
+  val firstString = aStringList.head // string
+
+  // Point #1: in Scala we usually operate with IMMUTABLE values/objects
+  // Any modification to an object must return ANOTHER object
+  /*
+    Benefits:
+    1) works miracles in multithreaded/distributed env
+    2) helps making sense of the code ("reasoning about")
+   */
+  val reversedList = aList.reverse // returns a NEW list
+
+  // Point #2: Scala is closest to the OO ideal
 }
